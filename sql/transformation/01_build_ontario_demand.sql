@@ -9,3 +9,9 @@ COPY (
 )
 TO 'data/processed/ontario_demand_2026.parquet'
 (FORMAT PARQUET);
+
+SELECT COUNT(*)
+FROM 'data/processed/ontario_demand_2026.parquet';
+
+DESCRIBE SELECT *
+FROM 'data/processed/ontario_demand_2026.parquet';
