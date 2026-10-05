@@ -1,3 +1,5 @@
+-- Identifies new hourly demand records that are not yet in the processed dataset.
+
 with incoming_transformed as (
     select Date, Hour, "Market Demand", "Ontario Demand", Date + Hour * INTERVAL '1 hour' AS hour_ending_timestamp
     FROM read_csv('data/raw/PUB_Demand.csv', skip = 3, header = true)

@@ -1,3 +1,6 @@
+-- Builds the initial processed Ontario demand Parquet dataset with an hour-ending timestamp.
+-- Also verifies the output row count and schema.
+
 COPY (
     SELECT
         Date,

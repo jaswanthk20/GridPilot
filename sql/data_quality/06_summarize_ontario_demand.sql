@@ -1,3 +1,5 @@
+-- Summarizes Ontario Demand and identifies the minimum and maximum demand periods.
+
 select MIN("Ontario Demand"), MAX("Ontario Demand"), AVG("Ontario Demand")
 from 'data/PUB_Demand_2026.csv';
 
