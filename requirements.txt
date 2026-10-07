@@ -1,6 +1,2 @@
-urllib
-os
-sys
-subprocess
-duckdb
+duckdb==1.5.6
 
