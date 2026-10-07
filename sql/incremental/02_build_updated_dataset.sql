@@ -6,14 +6,15 @@ COPY (
         FROM read_csv('data/raw/PUB_Demand.csv', skip = 3, header = TRUE)
     )
 
-    SELECT *
-    FROM incoming
-    WHERE hour_ending_timestamp > (SELECT MAX(hour_ending_timestamp) FROM 'data/processed/ontario_demand_2026.parquet')
+    SELECT Date, Hour, "Market Demand", "Ontario Demand", hour_ending_timestamp
+    FROM 'data/processed/ontario_demand_2026.parquet'
 
     UNION ALL
 
-    SELECT * 
-    FROM 'data/processed/ontario_demand_2026.parquet'
+    SELECT Date, Hour, "Market Demand", "Ontario Demand", hour_ending_timestamp
+    FROM incoming
+    WHERE hour_ending_timestamp > (SELECT MAX(hour_ending_timestamp) FROM 'data/processed/ontario_demand_2026.parquet')
+
 
 )
 TO 'data/processed/ontario_demand_2026_updated.parquet'
