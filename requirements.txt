@@ -1,0 +1,6 @@
+urllib
+os
+sys
+subprocess
+duckdb
+
