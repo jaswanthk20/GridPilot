@@ -39,6 +39,7 @@ jobs:
 
           git add data/raw/PUB_Demand.csv
           git add data/processed/ontario_demand_2026.parquet
+          git add logs/pipeline_runs.csv
 
           if git diff --cached --quiet; then
             echo "No changes to commit"
