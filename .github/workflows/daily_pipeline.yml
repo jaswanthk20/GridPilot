@@ -30,7 +30,7 @@ jobs:
 
       - name: Run GridPilot pipeline
         run: |
-          python scripts/03_run_pipeline.py
+          python scripts/run_pipeline.py
 
       - name: Commit updated data
         if: success()
