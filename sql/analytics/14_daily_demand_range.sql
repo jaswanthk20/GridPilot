@@ -4,5 +4,5 @@ SELECT Date, MIN("Ontario Demand") AS DailyMin, MAX("Ontario Demand") AS DailyMa
 FROM 'data/processed/ontario_demand_2026.parquet'
 WHERE Hour BETWEEN 1 AND 24 
 GROUP BY Date
-HAVING Hour BETWEEN 1 AND 24
+HAVING COUNT(*) = 24
 ORDER BY DemandRange DESC
