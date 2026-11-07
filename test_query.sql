@@ -1,2 +1,2 @@
-select max(hour_ending_timestamp) 
-FROM 'data/processed/ontario_demand_2026.parquet'
+select COUNT(*), max(hour_start_timestamp), min(hour_start_timestamp) 
+FROM 'data/processed/demand_weather_2026.parquet'
